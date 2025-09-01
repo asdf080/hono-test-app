@@ -12,4 +12,4 @@ const handler = handle(app);
 
 export { handler as GET, handler as POST, handler as PUT, handler as DELETE };
 
-export type AppType = typeof app;
+export type AppType = typeof routes;
