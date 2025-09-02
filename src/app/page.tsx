@@ -1,3 +1,9 @@
+import Todo from "@/components/todo";
+
 export default function Home() {
-  return <div className="">ㅁㄴㅇㄹㅁㄴㅇㄹ</div>;
+  return (
+    <div className="">
+      <Todo />
+    </div>
+  );
 }
