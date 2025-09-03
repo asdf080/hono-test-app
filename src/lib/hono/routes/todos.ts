@@ -1,5 +1,6 @@
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
 import { TodoSchema, CreateTodoSchema, UpdateTodoSchema } from "@/lib/hono/schema/todo-schema";
+import { getTodosHandler } from "@/lib/hono/handlers/todos";
 
 export let todos: Array<{ id: number; title: string; completed: boolean }> = [];
 export let nextId = 1;
@@ -16,6 +17,7 @@ const getTodos = createRoute({
       },
       description: "todo list",
     },
+    404: { description: "Not found" },
   },
 });
 
