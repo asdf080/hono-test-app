@@ -105,3 +105,8 @@ app.doc("/doc-json", {
 });
 app.get("/doc", swaggerUI({ url: "/api/doc-json" }));
 ```
+
+TODO: 핸들러 파일 분리
+
+출처
+https://github.com/honojs/middleware/tree/main/packages/zod-openapi
