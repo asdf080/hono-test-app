@@ -56,17 +56,20 @@ export default function Todo() {
       <ul>
         {isLoading && <li>Loading...</li>}
         {data &&
-          data.map((todo) => (
-            <li key={todo.id}>
-              {todo.title}
-              <div className="flex">
-                <button onClick={() => handleEdit(todo.id)} disabled={todo.completed}>
-                  {todo.completed ? "Completed" : "unCompleted"}
-                </button>
-                <button onClick={() => handleDelete(todo.id)}>Delete</button>
-              </div>
-            </li>
-          ))}
+          data.map((todo) => {
+            const { completed, id, title } = todo;
+            return (
+              <li key={id}>
+                {title}
+                <div className="flex">
+                  <button onClick={() => handleEdit(id)} disabled={completed}>
+                    {completed ? "Completed" : "unCompleted"}
+                  </button>
+                  <button onClick={() => handleDelete(id)}>Delete</button>
+                </div>
+              </li>
+            );
+          })}
       </ul>
     </section>
   );
